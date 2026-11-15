@@ -67,7 +67,7 @@ public class DataSeeder implements CommandLineRunner {
 
         User customer1 = userRepository.findByEmail("customer@rms.com").orElseGet(() ->
             userRepository.save(User.builder()
-                .fullName("Satya Sharma")
+                .fullName("Rama Satya")
                 .email("customer@rms.com")
                 .password(passwordEncoder.encode("customer123"))
                 .phone("9876543212")

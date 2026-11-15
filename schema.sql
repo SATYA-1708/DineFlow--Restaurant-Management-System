@@ -190,7 +190,7 @@ CREATE TABLE `chat_messages` (
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `phone`, `role`, `is_active`) VALUES
 (1, 'System Admin', 'admin@rms.com', '$2a$10$wO3mH0mUo0v0O1W2gW1mye3e7P8T7G6F7e5b6w2e3r4t5y6u7i8o9', '9876543210', 'ADMIN', 1),
 (2, 'Rajesh Verma (Captain)', 'staff@rms.com', '$2a$10$wO3mH0mUo0v0O1W2gW1mye3e7P8T7G6F7e5b6w2e3r4t5y6u7i8o9', '9876543211', 'STAFF', 1),
-(3, 'Satya Sharma', 'customer@rms.com', '$2a$10$wO3mH0mUo0v0O1W2gW1mye3e7P8T7G6F7e5b6w2e3r4t5y6u7i8o9', '9876543212', 'CUSTOMER', 1),
+(3, 'Rama Satya', 'customer@rms.com', '$2a$10$wO3mH0mUo0v0O1W2gW1mye3e7P8T7G6F7e5b6w2e3r4t5y6u7i8o9', '9876543212', 'CUSTOMER', 1),
 (4, 'Priya Nair', 'priya@rms.com', '$2a$10$wO3mH0mUo0v0O1W2gW1mye3e7P8T7G6F7e5b6w2e3r4t5y6u7i8o9', '9876543213', 'CUSTOMER', 1);
 
 -- Menu Categories
