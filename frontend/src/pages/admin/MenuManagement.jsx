@@ -284,11 +284,32 @@ export default function MenuManagement() {
                     filteredItems.map(item => (
                       <tr key={item.id}>
                         <td>
-                          <div style={{ fontWeight: 700, color: 'var(--text)', fontSize: '14px' }}>
-                            {item.name}
-                          </div>
-                          <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '2px', maxWidth: '380px' }}>
-                            {item.description || 'No description provided'}
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                            {item.imageUrl ? (
+                              <img
+                                src={item.imageUrl}
+                                alt={item.name}
+                                style={{
+                                  width: '44px',
+                                  height: '44px',
+                                  borderRadius: '10px',
+                                  objectFit: 'cover',
+                                  border: '1px solid var(--border)',
+                                  flexShrink: 0
+                                }}
+                                onError={e => {
+                                  e.currentTarget.style.display = 'none'
+                                }}
+                              />
+                            ) : null}
+                            <div>
+                              <div style={{ fontWeight: 700, color: 'var(--text)', fontSize: '14px' }}>
+                                {item.name}
+                              </div>
+                              <div style={{ fontSize: '12px', color: 'var(--text-muted)', marginTop: '2px', maxWidth: '380px' }}>
+                                {item.description || 'No description provided'}
+                              </div>
+                            </div>
                           </div>
                         </td>
 

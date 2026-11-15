@@ -223,30 +223,46 @@ export default function MenuPage() {
               {/* Dish Visual Header */}
               <div
                 style={{
-                  height: '140px',
+                  height: '160px',
                   background: 'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   borderBottom: '1px solid var(--border-light)',
-                  position: 'relative'
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
-                <div
-                  style={{
-                    width: '64px',
-                    height: '64px',
-                    borderRadius: '20px',
-                    background: '#fff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'var(--primary)',
-                    boxShadow: '0 4px 14px rgba(249, 115, 22, 0.15)'
-                  }}
-                >
-                  <UtensilsCrossed size={30} strokeWidth={1.8} />
-                </div>
+                {item.imageUrl ? (
+                  <img
+                    src={item.imageUrl}
+                    alt={item.name}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover'
+                    }}
+                    onError={e => {
+                      e.currentTarget.style.display = 'none'
+                    }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      width: '64px',
+                      height: '64px',
+                      borderRadius: '20px',
+                      background: '#fff',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'var(--primary)',
+                      boxShadow: '0 4px 14px rgba(249, 115, 22, 0.15)'
+                    }}
+                  >
+                    <UtensilsCrossed size={30} strokeWidth={1.8} />
+                  </div>
+                )}
                 <span
                   className="badge badge-info"
                   style={{
@@ -255,7 +271,8 @@ export default function MenuPage() {
                     right: '12px',
                     fontSize: '11px',
                     backdropFilter: 'blur(8px)',
-                    background: 'rgba(255, 255, 255, 0.9)'
+                    background: 'rgba(255, 255, 255, 0.92)',
+                    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
                   }}
                 >
                   {item.categoryName || 'Special'}
